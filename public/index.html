@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross Sums</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .grid {
+        display: grid;
+        gap: 2px;
+        margin: 20px auto;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+      .cell[data-type="target"] {
+        background-color: #f9f9f9;
+        font-weight: bold;
+      }
+      .cell[data-selected="circle"] {
+        background-color: #90ee90; /* Light green */
+      }
+      .cell[data-selected="erase"] {
+        background-color: #f08080; /* Light red */
+      }
+      .toolbar {
+        margin: 20px;
+      }
+      .message {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+      }
+      /* Define the style for active mode button */
+      .active-mode {
+        background-color: #4caf50; /* Green, you can customize this color */
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cross Sums</h1>
+    <div id="game-board" class="grid"></div>
+    <div class="toolbar">
+      <button id="circle-mode">Circle Mode</button>
+      <button id="erase-mode" class="active-mode">Erase Mode</button>
+    </div>
+    <div id="message" class="message">Game in progress...</div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
